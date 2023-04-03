@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items; let i = index">
+      <ion-item>
+        <h2>{{item.name}}</h2>
+        <p>{{item.quantity}}</p>
+      </ion-item>
+      <ion-item-options>
+        <button (click)="removeItem(item, i)" ion-button color="secondary" icon-start>
+          <ion-icon name="trash-outline"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- <ion-item-sliding>
+        <ion-item>
+          <h2>Bread</h2>
+          <p>2</p>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="secondary" icon-start>
+            <ion-icon name="trash-outline"></ion-icon>
+            Done
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>  
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Cake</h2>
+        <p>10</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="secondary" icon-start>
+          <ion-icon name="trash-outline"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>  
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Water</h2>
+        <p>21</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="secondary" icon-start>
+          <ion-icon name="trash-outline"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>
+    </ion-item-sliding> 
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Cookies</h2>
+        <p>13</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="secondary" icon-start>
+          <ion-icon name="trash-outline"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>
+    </ion-item-sliding> --> 
+  </ion-list>  
+
+  <!-- <ion-fab bottom right>
+    <button ion-fab mini> <ion-icon name = "add"></ion-icon></button>
+  </ion-fab> -->
+
+  <ion-fab>
+    <ion-fab-button (click)="addItem()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
